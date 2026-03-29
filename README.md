@@ -4,7 +4,6 @@ Crimson is a multi-module bank transaction platform with a Spring Boot backend a
 
 The current stack supports:
 
-- Customer creation
 - Account creation
 - Account lookup
 - Transaction history lookup
@@ -85,7 +84,7 @@ The backend reads these environment variables:
 - `CRIMSON_DATASOURCE_USERNAME`
 - `CRIMSON_DATASOURCE_PASSWORD`
 
-Default local values are already defined in [application.yaml](/home/keru/Dev/crimson/launcher/src/main/resources/application.yaml).
+Default local values are already defined in [application.yaml](launcher/src/main/resources/application.yaml).
 
 ### Frontend
 
@@ -106,20 +105,6 @@ cp frontend/.env.example frontend/.env.local
 
 ## Main Endpoints
 
-### Create customer
-
-`POST /api/v1/customers`
-
-Example body:
-
-```json
-{
-  "firstName": "Ava",
-  "lastName": "Mercer",
-  "email": "ava.mercer@crimson.test"
-}
-```
-
 ### Create account
 
 `POST /api/v1/accounts`
@@ -128,7 +113,9 @@ Example body:
 
 ```json
 {
-  "customerId": "11111111-1111-1111-1111-111111111111",
+  "firstName": "Ava",
+  "lastName": "Mercer",
+  "email": "ava.mercer@crimson.test",
   "currency": "MXN",
   "initialBalance": 2500.00
 }
@@ -164,22 +151,21 @@ The dashboard includes:
 
 - Account inspection by UUID
 - Account balance and activity metrics
-- Existing-customer account opening form
+- Account creation form
 - Transfer submission form
 - Recent transaction feed
-- A dedicated onboarding screen for customer creation and account provisioning
 
 The visual style uses crimson-ruby tones with a more youthful fintech feel while staying professional.
 
 ## Files That Matter First
 
-- [README.md](/home/keru/Dev/crimson/README.md)
-- [compose.yaml](/home/keru/Dev/crimson/compose.yaml)
-- [launcher/src/main/resources/application.yaml](/home/keru/Dev/crimson/launcher/src/main/resources/application.yaml)
-- [launcher/src/main/resources/db/migration/V1__create_bank_schema.sql](/home/keru/Dev/crimson/launcher/src/main/resources/db/migration/V1__create_bank_schema.sql)
-- [frontend/app/page.tsx](/home/keru/Dev/crimson/frontend/app/page.tsx)
-- [api-rest/src/main/java/com/enigma/crimson/api/accounts/AccountsController.java](/home/keru/Dev/crimson/api-rest/src/main/java/com/enigma/crimson/api/accounts/AccountsController.java)
-- [api-rest/src/main/java/com/enigma/crimson/api/transactions/TransactionsController.java](/home/keru/Dev/crimson/api-rest/src/main/java/com/enigma/crimson/api/transactions/TransactionsController.java)
+- [README.md](crimson/README.md)
+- [compose.yaml](crimson/compose.yaml)
+- [launcher/src/main/resources/application.yaml](crimson/launcher/src/main/resources/application.yaml)
+- [launcher/src/main/resources/db/migration/V1__create_bank_schema.sql](crimson/launcher/src/main/resources/db/migration/V1__create_bank_schema.sql)
+- [frontend/app/page.tsx](crimson/frontend/app/page.tsx)
+- [api-rest/src/main/java/com/enigma/crimson/api/accounts/AccountsController.java](crimson/api-rest/src/main/java/com/enigma/crimson/api/accounts/AccountsController.java)
+- [api-rest/src/main/java/com/enigma/crimson/api/transactions/TransactionsController.java](crimson/api-rest/src/main/java/com/enigma/crimson/api/transactions/TransactionsController.java)
 
 ## Helpful Commands
 
