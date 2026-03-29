@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CrimsonApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CrimsonApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(CrimsonApplication.class, args);
+    }
 }
